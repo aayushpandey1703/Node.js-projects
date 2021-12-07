@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Your Notes</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link rel='stylesheet' href="css/login.css">
+    </head>
+    <body>
+        {{>header}}
+         <div class="notes" style="float: left;">
+             <ul>
+            {{#each datax}}                                  <!--access array elements-->
+            <li onclick="done(this)">               
+                {{this.title}}
+                <button type="button" name="delete" class="but" value='{{this.id}}' style="float: right;">{{this.id}}</button>
+            </li>
+          
+            {{/each}}
+            </ul>
+        </div>
+        {{>sidebar}}
+       <script src="js/note.js"></script>
+
+       <script type="text/javascript">
+
+      $(document).ready(function(){
+           $(".but").click(function(e){
+               e.preventDefault()
+           var a=$(this).val()
+           $.ajax({
+               type:'post',
+               url:'/deletenote',
+               data:{'delete':a},
+               dataType:'text',
+               success:function(response){
+                   alert('frf')
+               }
+           })   
+       })   
+      })
+
+       </script>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+console.log("starting")
+
+setTimeout(()=>{            // Asynchronuoud implementation of node inorder to delay the execution of code block within setTimeout
+   
+        console.log('last')
+    
+
+}, 4000)
+setTimeout(()=>{
+  
+        console.log('first')
+    
+
+}, 2000)

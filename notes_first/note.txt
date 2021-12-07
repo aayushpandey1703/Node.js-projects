@@ -1,0 +1,30 @@
+// inorder to get package.json file run npm init command on terminal cuz package-lock.json is no use 
+//if node_module direcotry is not persent in project then run: npm install to install the required libraries
+
+// const valid=require('validator')       //call an npm package with package name
+// const color=require('chalk')           
+
+// //using chalk lib 
+// console.log(color.green.bold.inverse('success!'))
+
+// //using validator library
+// console.log(valid.isEmail('pandeyaayush81@gmail.com'))  //check npm website for documentation and other packages
+
+
+
+// //call local file note.js
+
+// // const notes=require('./note.js')     //speicfy path of file ./note.js
+
+
+// // console.log(notes())
+
+
+// // file write and append
+// // const file=require('fs')                           //import node module named: fs no install required
+
+// // file.writeFileSync('note.txt','first note')        //write to file 
+// // console.log('note created')
+
+// // file.appendFileSync('note.txt','\nappnended')      //append to file
+// // console.log('appended')
