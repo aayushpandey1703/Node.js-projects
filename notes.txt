@@ -1,0 +1,55 @@
+## Heroku notes
+1. install heroku cli
+2. enter cmd heroku login inorder to login to your heroku account 
+
+## git notes
+1. install git version control system from git-scm.com 
+2. git is used to track files by creating savepoints of prev versions of app
+3. to start git in app use 'git init' cmd that will create .git folder (inorder change visibility of .git foler follow "File->preferences->settings
+     scroll down and navigate to file:exclude section")
+4. use 'git status' cmd to see untracked files list
+5. to stop git from tracking certain files like node_modules create a folder and name it ".gitignore" and then simply type folder name in that
+   file like node_modules/
+6. use 'git add .' cmd to add all untracked files to staged area and then use 'git commit -m "[description]"' cmd commit changes made and create a savepoints
+7. to revert to previous version of project using git follow this link: https://www.youtube.com/watch?v=dEPwr7a6Pw0
+8. 'git log --oneline' to list out project versions
+9. use 'git reset --hard <version number>' cmd to switch head to that project version
+10. you could use 'git push -u main' cmd to get origin remote at current brance so that u could use 'git push' cmd instead of 'git push origin main' cmd 
+    to push code to github
+
+## github deployment from git
+0. open git bash and navigate to project directory like 'F:\Node.js projects\web-server'
+1. test connection to github using 'ssh -T git@github.com' cmd
+2. create a new repo at github
+3. git remote add origin git@github.com:aayushpandey1703/test.git
+4. git branch -M main
+5. git push -u origin main
+6. if github repo already created then instead of "git push -u origin main" use git "push -u origin main --force" as first push cmd everytime 
+7. "git push" cmd afterwards to update changes at github 
+8. inorder to check whether remote origin is created at project folder or not use "git remote -v" at project root directory
+9. if remote origin for a github repo is not present then create it use cmd at step 3
+
+## ssh key setup inorder deploy project to github and heroku for windows
+1. open git bash
+   follow these cmds:-
+   1. ls -a -l ~/.ssh  (check if ssh folder exists in user folder "-a"- to show hidden folder "-l"- list folder in proper structure "~/.ssh - /c/Users/Lenovo/.ssh check this folder exists or not)
+   2. ssh-keygen -t rsa -b 4096 -C "pandeyaayush81@gmail.com"  (generate rsa ssh key)
+   3.  eval $(ssh-agent -s)
+   4.  ssh-add ~/.ssh/id_rsa
+
+## heroku deployment
+1. use "heroku create [app name]" cmd
+2. change the key-val pair in script key in package.json file to "start":"node src/app.js"  [now u can run ur app locally using cmd "npm run start"]
+3. change the port value at app.listen in app.js file and [if any localhost url] also at public/js/app.js file change the localhost url to /weather so that heroku can use heroku url rather than localhost url
+4. finally to deploy use "git push heroku main" cmd
+
+whenever you want to deploy any project to heroku first push the code to github.com and after that follow above steps
+to deploy your app
+
+## mongodb notes
+1. Start mongodb server using cmd 'D:\mongodb\bin\mongod.exe --dbpath=D:\mongodb-data' at terminal 
+2. install robo 3t for mongo GUI
+3. to connect node application with mongo server locally follow:-
+   1) install mongodb driver using 'npm i mongodb@3.1' cmd
+   2) create a js file 'mongodb.js' 
+   3) open 'task-manager/mongodb.js for reference to connect to mongo server
