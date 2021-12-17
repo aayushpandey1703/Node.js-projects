@@ -47,9 +47,25 @@ whenever you want to deploy any project to heroku first push the code to github.
 to deploy your app
 
 ## mongodb notes
-1. Start mongodb server using cmd 'D:\mongodb\bin\mongod.exe --dbpath=D:\mongodb-data' at terminal 
-2. install robo 3t for mongo GUI
-3. to connect node application with mongo server locally follow:-
-   1) install mongodb driver using 'npm i mongodb@3.1' cmd
+0. install mongoose using 'npm i mongoose' cmd
+1. install robo 3t for mongo GUI
+2. to install mongodb driver (not imp) :-
+   1) to install mongodb driver use 'npm i mongodb@3.1' cmd
    2) create a js file 'mongodb.js' 
    3) open 'task-manager/mongodb.js for reference to connect to mongo server
+
+3. to connect node app with mongodb using mongoose follow these steps (neccessary steps):
+   1) to install mongodb driver use 'npm i mongoose' cmd
+   2) Start mongodb server using cmd 'D:\mongodb\bin\mongod.exe --dbpath=D:\mongodb-data' at separate terminal 
+   3) create 'src/db/mongoose.js' file 
+   4) open 'task-manager/src/db/mongoose.js for reference to connect to mongo server and how to create models and insert doc in it
+
+
+## check mongoose doc for schemaTypes  i.e. model types, minlength and other meta-data of models/types from https://mongoosejs.com/docs/schematypes.html 
+
+## REST API tutorial (task-manager)
+1. install postman to test the api endpoints 
+2. install mongoose using 'npm i mongoose' cmd
+3. mongodb server in separate terminal
+3. create src/db/mongoose.js containing just mongoDB connection code and src/models folder that constains all models files
+4. refer task-manager directory to see how to accept data from client in form of json and parse it to object using express
